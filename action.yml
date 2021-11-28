@@ -1,5 +1,11 @@
 name: Publish Docker Image
 description: A simple GitHub composite action for a Docker repository.
+
+inputs:
+  token:
+    description: A GitHub Personal Access Token
+    required: true
+
 runs:
   using: composite
   steps:
@@ -15,7 +21,7 @@ runs:
       with:
         registry: ghcr.io
         username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+        password: ${{ inputs.token }}
     -
       name: Extract metadata (tags, labels) for Docker
       id: meta
