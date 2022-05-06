@@ -21,5 +21,5 @@ jobs:
         name: Publish Docker image
         uses: k-ishigaki/publish-docker-image-action@v1
         with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 ```
